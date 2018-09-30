@@ -9,9 +9,9 @@ predict_xgb.cpp——加载训练好的模型，加载测试数据，产生预�
 
 # 二、正确打开方式
 Step1: compile the code. command: 
-'''
+...
 g++ predict_xgb.cpp -I xgboost/include -I xgboost/rabit/include xgboost/lib/libxgboost.a xgboost/rabit/lib/librabit.a xgboost/dmlc-core/libdmlc.a -fopenmp -Wall
-'''
+...
 
 Step2: run "./a.out"
 
