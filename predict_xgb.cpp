@@ -36,7 +36,9 @@ DMatrixHandle load_dense_data(const char *data_path) {
     //
     float feat[num_row][feature_count + 1];
     for (int i = 0; i < num_row; i++) {
-        feat[i][0] = -1.0;
+        //xgboost训练和预测使用的数据格式必须保持一致,否则预测结果会异常
+        //比如model下的LocalFile模型是用libsvm训练的，预测时候使用的数据必须使用libsvm格式
+        feat[i][0] = -1.0; //但我这里是dense格式的数据，为了和libsvim保持一致，则只需在特征列前加一维度即可，可以是任意数字
         for (int j = 1; j <= feature_count; j++) {
             infile >> feat[i][j];//读取一个值（空格、制表符、换行隔开）就写入到矩阵中，行列不断循环进行
         }
@@ -56,7 +58,7 @@ DMatrixHandle load_dense_data(const char *data_path) {
 
 
 int main(int argc, char const *argv[]) {
-    const char *model_path = "LocalFile";
+    const char *model_path = "model_file";
     const char *test_data_path = "dense.features";
     const char *predict_data_save_path = "result.txt";
 
