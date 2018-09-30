@@ -10,6 +10,7 @@ model_file——已经训练好的xgboost模型,训练数据使用libsvm格式�
 
 predict_xgb.cpp——加载训练好的模型，加载测试数据，产生预测结果
 
+train_xgb_predict.cpp——训练xgboost模型，预测一组测试数据
 
 
 # 二、正确打开方式
