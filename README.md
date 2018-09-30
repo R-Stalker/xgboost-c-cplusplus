@@ -2,10 +2,15 @@
 
 # 一、文件目录
 
-xgboost——这里的xgboost文件是从xgboost源码中打包出来的供c/c++使用的文件夹。你也完全可以直接用整个xgboost源码包。
+xgboost——这里的xgboost文件是从xgboost源码中打包出来的供c/c++使用的文件夹。你也完全可以直接用整个xgboost源码包
+
 dense.feature——用于预测的特征数据，维度是108维
+
 model_file——已经训练好的xgboost模型,训练数据使用libsvm格式（我专门提训练数据格式是有原因的，这里有个大坑）
+
 predict_xgb.cpp——加载训练好的模型，加载测试数据，产生预测结果
+
+
 
 # 二、正确打开方式
 Step1: compile the code. command: 
