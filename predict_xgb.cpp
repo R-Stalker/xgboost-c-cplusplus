@@ -45,9 +45,6 @@ DMatrixHandle load_dense_data(const char *data_path) {
     }
     infile.close();//读取完成之后关闭文件
 
-    cout << feat[0][0] << " " << float(feat[0][1]) << " " << float(feat[0][108]) << endl;
-    cout << feat[1][0] << " " << float(feat[1][1]) << " " << float(feat[1][109]) << endl;
-    cout << feat[2][0] << " " << float(feat[2][1]) << " " << float(feat[2][108]) << endl;
     // convert 2d array to DMatrix
     DMatrixHandle data_DMatrix;
     XGDMatrixCreateFromMat(reinterpret_cast<float *>(feat), (bst_ulong) num_row, (bst_ulong) (feature_count + 1), NAN,
